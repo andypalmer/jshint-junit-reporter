@@ -87,8 +87,9 @@ exports.reporter = function (results, data, opts) {
 	});
 
 	out.push("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
+	out.push("<testsuites package=\"jshint\">");
 	out.push("<testsuite name=\"" + suite + "\" tests=\"" + (data.length || 0) + "\" failures=\"" + results.length + "\" errors=\"0\">");
-
+	
 	// we need at least 1 empty test
 	if (!results.length) {
 		out.push("\t<testcase name=\"" + suite + "\" />");
@@ -118,6 +119,7 @@ exports.reporter = function (results, data, opts) {
 	}
 
 	out.push("</testsuite>");
+	out.push("</testsuites>");
 
 	if (outputFile) {
 		fs.writeFileSync(outputFile, out.join('\n'));
