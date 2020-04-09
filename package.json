@@ -3,7 +3,7 @@
   "version": "0.2.3",
   "description": "A JSHint reporter for jUnit.",
   "license": "MIT",
-  "main": "index.js",
+  "main": "reporter.js",
   "scripts": {
     "test": "node test.js"
   },
